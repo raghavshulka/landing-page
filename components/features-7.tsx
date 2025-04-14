@@ -1,6 +1,3 @@
-import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
-import Image from 'next/image'
-
 export default function FeaturesSection() {
     return (
         <section className="overflow-hidden py-16 md:py-32">
