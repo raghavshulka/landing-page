@@ -30,13 +30,13 @@ export default function ContentSection() {
               review time, and streamline complex legal workflows.{" "}
             </p>
 
-            <p className="text-muted-foreground">
+            {/* <p className="text-muted-foreground">
               With built-in data privacy controls, enterprise-grade security,
               and seamless integration into existing legal ecosystems, the
               platform empowers legal teams to accelerate case timelines,
               improve accuracy, and minimize costs—without compromising
               compliance or control.
-            </p>
+            </p> */}
 
             <div className="grid grid-cols-2 gap-3 pt-6 sm:gap-4">
               {/* <div className="space-y-3">
@@ -66,14 +66,14 @@ export default function ContentSection() {
                 className="hidden rounded-[15px] dark:block"
                 alt="Orbit Insight platform illustration dark"
                 width={1206}
-                height={612}
+                height={912}
               />
               <Image
                 src="/exercice.png"
                 className="rounded-[15px] shadow dark:hidden"
                 alt="Orbit Insight platform illustration light"
                 width={1206}
-                height={612}
+                height={912}
               />
             </div>
           </div>

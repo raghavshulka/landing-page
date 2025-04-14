@@ -5,6 +5,7 @@ import Features2 from '@/components/features-2'
 import Features6 from '@/components/features-6'
 import { HeroHeader } from '@/components/hero5-header'
 import Footer from '@/components/footer'
+import CallToAction from '@/components/call-to-action'
 const page = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const page = () => {
       <Features2 />
       {/* Platform Features */}
       <Features6 />
+      <CallToAction />
     </div>
   )
 }

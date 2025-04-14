@@ -6,8 +6,7 @@ export default function FeaturesSection() {
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
                 <div className="relative z-10 max-w-2xl">
                     <h2 className="text-4xl font-semibold lg:text-5xl">Why Orbit Insight?</h2>
-                    <p className="mt-6 text-lg">Built FOR Lightning-Fast Performance</p>
-                </div>
+                    <p className="mt-12 text-2xl font-semibold lg:text-3xl pb-1">Built FOR Lightning-Fast Performance</p>
                 <div className="relative mx-auto">
                     <p className="text-muted-foreground">
                         Process millions of documents in record time with Orbit Insight's intelligent automation and scalable infrastructure.
@@ -16,6 +15,8 @@ export default function FeaturesSection() {
                         Orbit Insight is engineered to handle high-volume legal data with unmatched speed and precision—eliminating bottlenecks, reducing manual effort, and accelerating time to insight. Whether you're managing large-scale litigation or responding to a regulatory request, Orbit Insight empowers your legal team to move faster, stay compliant, and drive down review costs—all without compromising accuracy or control.
                     </p>
                 </div>
+                </div>
+
                 {/* <div className="relative -mx-4 rounded-3xl p-3 md:-mx-12 lg:col-span-3">
                     <div className="perspective-midrange">
                         <div className="rotate-x-6 -skew-2">

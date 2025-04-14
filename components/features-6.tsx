@@ -6,7 +6,7 @@ export default function FeaturesSection() {
             <div className="mx-auto max-w-5xl space-y-12 px-6">
                 <div className="relative z-10 grid items-center gap-6 md:grid-cols-2 md:gap-12">
                     <h2 className="text-4xl font-semibold">Platform Features</h2>
-                    <p className="max-w-sm sm:ml-auto">AI-Powered Search & Smart Document Review</p>
+                    {/* <p className="max-w-sm sm:ml-auto">AI-Powered Search & Smart Document Review</p> */}
                 </div>
                 {/* <div className="relative rounded-3xl p-3 md:-mx-8 lg:col-span-3">
                     <div className="aspect-88/36 relative">
