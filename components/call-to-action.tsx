@@ -6,8 +6,8 @@ export default function CallToAction() {
         <section className="py-16">
             <div className="mx-auto max-w-5xl  px-6 py-12 md:py-20 lg:py-32">
                 <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Start Building</h2>
-                    <p className="mt-4">Libero sapiente aliquam quibusdam aspernatur.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Transform Your Legal Strategy</h2>
+                    <p className="mt-4">Early case assessment is more than just a preliminary step—it's a strategic advantage that can influence every aspect of legal practice.</p>
 
                     <div className="mt-12 flex flex-wrap justify-center gap-4">
                         <Button asChild size="lg">
@@ -18,7 +18,7 @@ export default function CallToAction() {
 
                         <Button asChild size="lg" variant="outline">
                             <Link href="/">
-                                <span>Book Demo</span>
+                                <span>Schedule Demo</span>
                             </Link>
                         </Button>
                     </div>

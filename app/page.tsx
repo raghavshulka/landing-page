@@ -2,7 +2,6 @@ import HeroSection from "@/components/hero-section";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Features1 from "@/components/features-1";
 import CallToAction from "@/components/call-to-action";
-import Footer from "@/components/footer";
 import Integration from "@/components/integrations-4";
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Features1 />
       <Integration />
       <CallToAction />
-      <Footer />
     </div>
   );
 }

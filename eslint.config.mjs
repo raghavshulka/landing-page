@@ -18,6 +18,7 @@ const eslintConfig = [
         "varsIgnorePattern": "^_"
       }],
       "@next/next/no-img-element": "warn",
+      "react/no-unescaped-entities": "off",
     }
   }
 ];

@@ -1,16 +1,16 @@
 'use client'
 import Link from 'next/link'
-import { Logo } from './logo'
+import { Logo, LogoStroke } from './logo'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Products', href: '/product' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Home', href: '/' },
+    { name: 'Orbit Insight', href: '/product' },
+    { name: 'ECA', href: '/product2' },
+    { name: 'Documentation', target: '_blank', href: 'https://docs.kentron.ai/introduction' },
 ]
 
 export const HeroHeader = () => {
@@ -36,7 +36,8 @@ export const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <Logo />
+                                <Logo className=' dark:visible ' />
+                                <LogoStroke className='dark:hidden' />
                             </Link>
 
                             <button
@@ -53,6 +54,7 @@ export const HeroHeader = () => {
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
+                                            target={item.target}
                                             href={item.href}
                                             className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{item.name}</span>
@@ -68,6 +70,7 @@ export const HeroHeader = () => {
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
                                             <Link
+                                                target={item.target}
                                                 href={item.href}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
@@ -77,7 +80,7 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
+                                {/* <Button
                                     asChild
                                     variant="outline"
                                     size="sm"
@@ -93,7 +96,7 @@ export const HeroHeader = () => {
                                     <Link href="#">
                                         <span>Sign Up</span>
                                     </Link>
-                                </Button>
+                                </Button> */}
                                 <Button
                                     asChild
                                     size="sm"

@@ -11,43 +11,52 @@ export default function ContentSection() {
         <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
           <div className="relative space-y-4">
             <p className="text-muted-foreground">
-              Gemini is evolving to be more than just the models.{" "}
-              <span className="text-accent-foreground font-bold">
-                It supports an entire ecosystem
-              </span>{" "}
-              — from products innovate.
+              AI-Powered Documents Review Platform for Modern Legal Teams
+            </p>
+            <p className=" text-md font-semibold ">
+              Revolutionizing Legal Documents Review: AI-Powered Speed,
+              Accuracy, and Cost Efficiency at Scale
             </p>
             <p className="text-muted-foreground">
-              It supports an entire ecosystem — from products to the APIs and
-              platforms helping developers and businesses innovate
+              Orbit Insight is an AI-powered Document Review Platform that is
+              purpose-built for insurance agencies, corporate legal departments,
+              law firms, and legal service providers seeking speed, scalability,
+              and cost-efficiency in eDiscovery.
+            </p>
+            <p className="text-muted-foreground">
+              Designed to process millions of documents with lightning-fast
+              performance (10,000 doc/min), the platform leverages advanced
+              machine learning to surface relevant insights, reduce manual
+              review time, and streamline complex legal workflows.{" "}
+            </p>
+
+            <p className="text-muted-foreground">
+              With built-in data privacy controls, enterprise-grade security,
+              and seamless integration into existing legal ecosystems, the
+              platform empowers legal teams to accelerate case timelines,
+              improve accuracy, and minimize costs—without compromising
+              compliance or control.
             </p>
 
             <div className="grid grid-cols-2 gap-3 pt-6 sm:gap-4">
-              <div className="space-y-3">
+              {/* <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Zap className="size-4" />
-                  <h3 className="text-sm font-medium">Faaast</h3>
+                  <h3 className="text-sm font-medium">Lightning-Fast</h3>
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  Orbit Insight is an AI-powered Document Review Platform that
-                  is purpose-built for insurance agencies, corporate legal
-                  departments, law firms, and legal service providers seeking
-                  speed, scalability, and cost-efficiency in eDiscovery.
+                  Process millions of documents with lightning-fast performance (10,000 doc/min), dramatically reducing review time and costs.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <Cpu className="size-4" />
-                  <h3 className="text-sm font-medium">Powerful</h3>
+                  <h3 className="text-sm font-medium">AI-Powered</h3>
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  Designed to process millions of documents with lightning-fast
-                  performance (10,000 doc/min), the platform leverages advanced
-                  machine learning to surface relevant insights, reduce manual
-                  review time, and streamline complex legal workflows.
+                  Advanced machine learning surfaces relevant insights, reduces manual review time, and streamlines complex legal workflows with precision.
                 </p>
-              </div>
-              
+              </div> */}
             </div>
           </div>
           <div className="relative mt-6 sm:mt-0">
@@ -55,14 +64,14 @@ export default function ContentSection() {
               <Image
                 src="/exercice-dark.png"
                 className="hidden rounded-[15px] dark:block"
-                alt="payments illustration dark"
+                alt="Orbit Insight platform illustration dark"
                 width={1206}
                 height={612}
               />
               <Image
                 src="/exercice.png"
                 className="rounded-[15px] shadow dark:hidden"
-                alt="payments illustration light"
+                alt="Orbit Insight platform illustration light"
                 width={1206}
                 height={612}
               />
