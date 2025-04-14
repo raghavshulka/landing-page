@@ -46,7 +46,7 @@ export default function IntegrationsSection() {
                             </IntegrationCard>
                         </div>
                     </div>
-                    <div className="mx-auto mt-12 max-w-lg space-y-6 text-center">
+                    {/* <div className="mx-auto mt-12 max-w-lg space-y-6 text-center">
                         <h2 className="text-balance text-3xl font-semibold md:text-4xl">Integrate with your favorite tools</h2>
                         <p className="text-muted-foreground">Connect seamlessly with popular platforms and services to enhance your workflow.</p>
 
@@ -56,7 +56,7 @@ export default function IntegrationsSection() {
                             asChild>
                             <Link href="#">Get Started</Link>
                         </Button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
