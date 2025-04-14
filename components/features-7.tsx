@@ -2,16 +2,16 @@ import { FileText, Shield, Search, Brain, Database, Cpu } from 'lucide-react'
 
 export default function FeaturesSection() {
     return (
-        <section className="overflow-hidden py-16 md:py-32">
-            <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
+        <section className="overflow-hidden py-8 md:py-16">
+            <div className="mx-auto max-w-5xl space-y-6 px-6 md:space-y-8">
                 <div className="relative z-10 max-w-2xl">
                     <h2 className="text-4xl font-semibold lg:text-5xl">Why Orbit Insight?</h2>
-                    <p className="mt-12 text-2xl font-semibold lg:text-3xl pb-1">Built FOR Lightning-Fast Performance</p>
-                <div className="relative mx-auto">
+                    <p className="mt-4 text-2xl font-semibold lg:text-3xl">Built FOR Lightning-Fast Performance</p>
+                <div className="relative mx-auto mt-4">
                     <p className="text-muted-foreground">
                         Process millions of documents in record time with Orbit Insight's intelligent automation and scalable infrastructure.
                     </p>
-                    <p className="text-muted-foreground mt-4">
+                    <p className="text-muted-foreground mt-3">
                         Orbit Insight is engineered to handle high-volume legal data with unmatched speed and precision—eliminating bottlenecks, reducing manual effort, and accelerating time to insight. Whether you're managing large-scale litigation or responding to a regulatory request, Orbit Insight empowers your legal team to move faster, stay compliant, and drive down review costs—all without compromising accuracy or control.
                     </p>
                 </div>
@@ -60,12 +60,12 @@ export default function FeaturesSection() {
                     </div>
                 </div> */}
                 
-                <div className="relative z-10 max-w-2xl pt-8">
+                <div className="relative z-10 max-w-2xl mt-8">
                     <h2 className="text-2xl font-semibold lg:text-3xl">Powerful Document Processing Engines</h2>
-                    <p className="mt-4">Orbit Insight is built on a powerful trio of core engines, purposefully designed for high-volume document processing</p>
+                    <p className="mt-2">Orbit Insight is built on a powerful trio of core engines, purposefully designed for high-volume document processing</p>
                 </div>
-                <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-3">
-                    <div className="space-y-3">
+                <div className="relative mx-auto grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-6 lg:grid-cols-3 lg:gap-6">
+                    <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Database className="size-4" />
                             <h3 className="text-sm font-medium">Centralized Ingestion Framework</h3>
@@ -87,19 +87,19 @@ export default function FeaturesSection() {
                         <p className="text-muted-foreground text-sm">This engine analyzes documents to gain a deep understanding and reveal hidden trends, patterns, and critical insights by leveraging advanced AI and machine learning algorithms.</p>
                     </div>
                 </div>
-                <div className="relative text-center">
+                <div className="relative text-center mt-3">
                     <p className="text-muted-foreground">Together, they establish a robust foundation that guarantees precision, speed, and trust at every stage of the discovery journey.</p>
                 </div>
                 
-                <div className="relative z-10 max-w-2xl pt-8">
+                <div className="relative z-10 max-w-2xl mt-8">
                     <h2 className="text-2xl font-semibold lg:text-3xl">Effortless Integration. Powerful Intelligence</h2>
-                    <p className="mt-4">Seamlessly connect and collect data from all your cloud storage with zero-code connectors — no complexity, just control.</p>
+                    <p className="mt-2">Seamlessly connect and collect data from all your cloud storage with zero-code connectors — no complexity, just control.</p>
                 </div>
-                <div className="relative mx-auto">
+                <div className="relative mx-auto mt-4">
                     <p className="text-muted-foreground">
                         Orbit Insight seamlessly connects with all your cloud storage platforms, including OneDrive, Google Drive, Box, Dropbox, Amazon S3, Google Cloud Storage, and Azure Blob Storage—making data collection effortless and scalable.
                     </p>
-                    <p className="text-muted-foreground mt-4">
+                    <p className="text-muted-foreground mt-3">
                         No-code integration captures rich metadata, summarizes documents using generative AI (GenAI), and categorizes — Fast-track your document review and discovery process.
                     </p>
                 </div>

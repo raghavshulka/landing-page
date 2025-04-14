@@ -3,17 +3,17 @@ import Image from "next/image";
 
 export default function ContentSection() {
   return (
-    <section className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+    <section className="py-8 md:py-16">
+      <div className="mx-auto max-w-5xl space-y-6 px-6 md:space-y-8">
         <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">
           Orbit Insight
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
+        <div className="grid gap-6 sm:grid-cols-2 md:gap-8 lg:gap-10">
           <div className="relative space-y-4">
             <p className="text-muted-foreground">
               AI-Powered Documents Review Platform for Modern Legal Teams
             </p>
-            <p className=" text-md font-semibold ">
+            <p className="text-md font-semibold">
               Revolutionizing Legal Documents Review: AI-Powered Speed,
               Accuracy, and Cost Efficiency at Scale
             </p>
@@ -27,7 +27,7 @@ export default function ContentSection() {
               Designed to process millions of documents with lightning-fast
               performance (10,000 doc/min), the platform leverages advanced
               machine learning to surface relevant insights, reduce manual
-              review time, and streamline complex legal workflows.{" "}
+              review time, and streamline complex legal workflows.
             </p>
 
             {/* <p className="text-muted-foreground">
@@ -38,7 +38,7 @@ export default function ContentSection() {
               compliance or control.
             </p> */}
 
-            <div className="grid grid-cols-2 gap-3 pt-6 sm:gap-4">
+            <div className="grid grid-cols-2 gap-3 pt-2 sm:gap-4">
               {/* <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Zap className="size-4" />
@@ -59,7 +59,7 @@ export default function ContentSection() {
               </div> */}
             </div>
           </div>
-          <div className="relative mt-6 sm:mt-0">
+          <div className="relative mt-0">
             <div className="bg-linear-to-b aspect-67/34 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
               <Image
                 src="/exercice-dark.png"
