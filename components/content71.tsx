@@ -1,15 +1,12 @@
 export default function ContentSection() {
   return (
     <section className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <h2 className="relative z-10 max-w-3xl text-4xl font-medium lg:text-5xl">
-          Why Early Case Assessment is a Game-Changer
-        </h2>
+      <div className="mx-auto max-w-5xl space-y-8 pb-4 md:space-y-16">
 
         <div className="grid gap-8">
           <div className="relative space-y-6">
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">
+              <h3 className="text-xl font-medium md:text-3xl" >
                 Informed Decision-Making
               </h3>
               <p className="text-muted-foreground">
@@ -27,7 +24,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">Cost Efficiency</h3>
+              <h3 className="text-xl lg:text-3xl  font-medium">Cost Efficiency</h3>
               <p className="text-muted-foreground">
                 Addressing a case early can lead to substantial cost savings.
                 Identifying potential issues or areas of concern at the outset
@@ -40,7 +37,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">Risk Mitigation</h3>
+                <h3 className="text-xl lg:text-3xl  font-medium">Risk Mitigation</h3>
               <p className="text-muted-foreground">
                 Identifying potential risks early in the process allows legal
                 teams to address them proactively. Whether it's uncovering
@@ -52,7 +49,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">Strategic Advantage</h3>
+              <h3 className="text-xl lg:text-3xl  font-medium">Strategic Advantage</h3>
               <p className="text-muted-foreground">
                 Having a detailed early case assessment provides a strategic
                 advantage in litigation. It allows legal teams to anticipate the
@@ -63,7 +60,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">
+              <h3 className="text-xl lg:text-3xl  font-medium">
                 Streamlined Discovery Process
               </h3>
               <p className="text-muted-foreground">
@@ -76,7 +73,7 @@ export default function ContentSection() {
               </p>
             </div>
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">Conclusion</h3>
+              <h3 className="text-xl lg:text-3xl  font-medium">Conclusion</h3>
               <p className="text-muted-foreground max-w-4xl text-lg">
                 Early case assessment is more than just a preliminary step; it's
                 a strategic advantage that can influence every aspect of legal
