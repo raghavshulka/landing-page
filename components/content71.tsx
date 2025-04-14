@@ -1,7 +1,7 @@
 export default function ContentSection() {
   return (
-    <section className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl space-y-8 pb-4 md:space-y-16">
+    <section className="py-8 md:py-16">
+      <div className="mx-auto max-w-5xl space-y-6 pb-4 md:space-y-10">
 
         <div className="grid gap-8">
           <div className="relative space-y-6">

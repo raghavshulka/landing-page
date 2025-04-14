@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function CallToAction() {
     return (
-        <section className="py-16">
-            <div className="mx-auto max-w-5xl  px-6 py-12 md:py-20 lg:py-32">
+        <section className="py-8">
+            <div className="mx-auto max-w-5xl px-6 py-6 md:py-10 lg:py-16">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Transform Your Legal Strategy</h2>
                     <p className="mt-4">Early case assessment is more than just a preliminary step—it's a strategic advantage that can influence every aspect of legal practice.</p>

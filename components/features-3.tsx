@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 
 export default function Features() {
     return (
-        <section className="py-16 md:py-32">
+        <section className="py-8 md:py-16">
             <div className="@container mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Kentron for Early Case Assessment</h2>
@@ -22,7 +22,7 @@ export default function Features() {
 
                         <CardContent>
                             
-                            <p className="text-sm">Kentron’s advanced search capabilities allow users to quickly pinpoint relevant data across vast data sources such as Slack, JIRA, Confluence, Teams, etc. In addition, Kentron’s auto-classification feature can identify and label over 150 data into predefined categories such as personal identifiable information (PII), credit card number, name, age, passport, etc. 
+                            <p className="text-sm">Kentron's advanced search capabilities allow users to quickly pinpoint relevant data across vast data sources such as Slack, JIRA, Confluence, Teams, etc. In addition, Kentron's auto-classification feature can identify and label over 150 data into predefined categories such as personal identifiable information (PII), credit card number, name, age, passport, etc. 
                             </p>
                         </CardContent>
                     </Card>
@@ -53,7 +53,7 @@ export default function Features() {
                         <CardContent>
                             <p className="mt-3 text-sm">Deduplication, threading, and filtering by metadata (e.g., date ranges, participants, and file types) significantly reduce data volume, lowering review costs.
                             </p>
-                            <p className="mt-3 text-sm">By leveraging Kentron’s robust data classification feature, you can transform chaotic datasets into organized, actionable insights, streamlining the litigation and compliance processes.
+                            <p className="mt-3 text-sm">By leveraging Kentron's robust data classification feature, you can transform chaotic datasets into organized, actionable insights, streamlining the litigation and compliance processes.
                             </p>
                         </CardContent>
                     </Card>

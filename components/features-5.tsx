@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 export default function FeaturesSection() {
     return (
-        <section className="py-16 md:pt-32">
+        <section className="py-8 md:pt-16">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
                     <div className="lg:col-span-2">
                         <div className="md:pr-6 lg:pr-0">
                             <h2 className="text-4xl font-semibold lg:text-5xl">Early Case Assessment</h2>
-                            <p className="mt-6  leading-tight">In legal practice, whether you're representing a client in a high-stakes litigation or managing a routine legal matter, the importance of early case assessment (ECA) cannot be overstated. Early case assessment refers to evaluating the facts, evidence, and legal issues of a case as soon as it arises, often before formal litigation or extensive legal proceedings commence. This proactive approach offers a range of benefits that can significantly impact the outcome of a case. Here’s why early case assessment is a game-changer in legal practice:</p>
+                            <p className="mt-6  leading-tight">In legal practice, whether you're representing a client in a high-stakes litigation or managing a routine legal matter, the importance of early case assessment (ECA) cannot be overstated. Early case assessment refers to evaluating the facts, evidence, and legal issues of a case as soon as it arises, often before formal litigation or extensive legal proceedings commence. This proactive approach offers a range of benefits that can significantly impact the outcome of a case. Here's why early case assessment is a game-changer in legal practice:</p>
                         </div>
                         <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                             <li>
