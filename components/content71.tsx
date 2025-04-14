@@ -10,7 +10,7 @@ export default function ContentSection() {
           <div className="relative space-y-6">
             <div className="space-y-4">
               <h3 className="text-xl font-medium">
-                1. Informed Decision-Making
+                Informed Decision-Making
               </h3>
               <p className="text-muted-foreground">
                 Early case assessment provides a{" "}
@@ -27,7 +27,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">2. Cost Efficiency</h3>
+              <h3 className="text-xl font-medium">Cost Efficiency</h3>
               <p className="text-muted-foreground">
                 Addressing a case early can lead to substantial cost savings.
                 Identifying potential issues or areas of concern at the outset
@@ -40,7 +40,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">3. Risk Mitigation</h3>
+              <h3 className="text-xl font-medium">Risk Mitigation</h3>
               <p className="text-muted-foreground">
                 Identifying potential risks early in the process allows legal
                 teams to address them proactively. Whether it's uncovering
@@ -52,7 +52,7 @@ export default function ContentSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-medium">4. Strategic Advantage</h3>
+              <h3 className="text-xl font-medium">Strategic Advantage</h3>
               <p className="text-muted-foreground">
                 Having a detailed early case assessment provides a strategic
                 advantage in litigation. It allows legal teams to anticipate the
@@ -64,7 +64,7 @@ export default function ContentSection() {
 
             <div className="space-y-4">
               <h3 className="text-xl font-medium">
-                5. Streamlined Discovery Process
+                Streamlined Discovery Process
               </h3>
               <p className="text-muted-foreground">
                 Early assessment often includes a preliminary review of evidence
