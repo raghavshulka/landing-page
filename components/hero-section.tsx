@@ -115,7 +115,7 @@ export default function HeroSection() {
                                     Highly customizable components for building modern websites and applications that look and feel the way you mean it.
                                 </TextEffect>
 
-                                <AnimatedGroup
+                                {/* <AnimatedGroup
                                     variants={{
                                         container: {
                                             visible: {
@@ -150,7 +150,7 @@ export default function HeroSection() {
                                             <span className="text-nowrap">Request a demo</span>
                                         </Link>
                                     </Button>
-                                </AnimatedGroup>
+                                </AnimatedGroup> */}
                             </div>
                         </div>
 
