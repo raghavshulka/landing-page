@@ -17,16 +17,8 @@ export default function FeaturesSection() {
                                 Informed Decision-Making
                             </li>
                             <li>
-                                <Zap className="size-5" />
-                                Cost Efficiency
-                            </li>
-                            <li>
                                 <Activity className="size-5" />
                                 Risk Mitigation
-                            </li>
-                            <li>
-                                <DraftingCompass className="size-5" />
-                                Strategic Advantage
                             </li>
                             <li>
                                 <Zap className="size-5" />
@@ -34,7 +26,7 @@ export default function FeaturesSection() {
                                 </li>
                         </ul>
                     </div>
-                    <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
+                    <div className="border-border/50 relative rounded-3xl border p-2.5 lg:col-span-3">
                         <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
                             <Image src="/payments.png" className="hidden rounded-[15px] dark:block" alt="payments illustration dark" width={1207} height={929} />
                             <Image src="/payments-light.png" className="rounded-[15px] shadow dark:hidden" alt="payments illustration light" width={1207} height={929} />
