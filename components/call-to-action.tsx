@@ -12,15 +12,15 @@ export default function CallToAction() {
                     <div className="mt-12 flex flex-wrap justify-center gap-4">
                         <Button asChild size="lg">
                             <Link href="/">
-                                <span>Get Started</span>
+                                <span>Book a Demo</span>
                             </Link>
                         </Button>
 
-                        <Button asChild size="lg" variant="outline">
+                        {/* <Button asChild size="lg" variant="outline">
                             <Link href="/">
                                 <span>Schedule Demo</span>
                             </Link>
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
             </div>
