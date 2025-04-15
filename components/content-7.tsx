@@ -1,5 +1,8 @@
 import { Cpu, Zap } from "lucide-react";
 import Image from "next/image";
+import image from "@/public/image.png";
+import darkimage from "@/public/darkimage.png";
+
 
 export default function ContentSection() {
   return (
@@ -62,14 +65,14 @@ export default function ContentSection() {
           <div className="relative mt-0">
             <div className="bg-linear-to-b aspect-67/34 relative max-w-[290px] mx-auto sm:max-w-none rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
               <Image
-                src="/exercice-dark.png"
+                src={darkimage}
                 className="hidden rounded-[15px] dark:block"
                 alt="Orbit Trace platform illustration dark"
                 width={1206}
                 height={912}
               />
               <Image
-                src="/exercice.png"
+                src={image}
                 className="rounded-[15px] shadow dark:hidden"
                 alt="Orbit Trace platform illustration light"
                 width={1206}

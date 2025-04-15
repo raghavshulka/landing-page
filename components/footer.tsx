@@ -42,11 +42,11 @@ const Footer: React.FC = () => {
     solutions: [
       // Use Cases
       { name: "Early Case Assessment", href: "/product2" },
-      { name: "Seamless Data Collections", href: "/data-collections" },
-      { name: "Proactive Data Monitoring", href: "/data-monitoring" },
+      { name: "Seamless Data Collections", href: "/seamlessdata" },
+      { name: "Proactive Data Monitoring", href: "/proactivedata" },
       // Industries
-      { name: "Organizations", href: "/organizations" },
-      { name: "Law Firms", href: "/law-firms" },
+      { name: "Organizations", href: "/organization" },  
+      { name: "Law Firms", href: "/lawfirms" },
       { name: "Education", href: "/education" },
     ],
     resources: [

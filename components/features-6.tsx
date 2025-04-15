@@ -60,9 +60,9 @@ export default function FeaturesSection() {
                         <p className="text-muted-foreground text-sm">Export data with precision and compliance, tailored to your needs.</p>
                     </div>
                 </div>
-                <div className="relative text-center mt-2">
+                {/* <div className="relative text-center mt-2">
                     <p className="text-muted-foreground">Together, they establish a robust foundation that guarantees precision, speed, and trust at every stage of the discovery journey.</p>
-                </div>
+                </div> */}
             </div>
         </section>
     )

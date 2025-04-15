@@ -1,5 +1,6 @@
 import { Activity, DraftingCompass, Mail, Zap, Database, Shield, Clock, Target, FileCheck } from 'lucide-react'
 import Image from 'next/image'
+import data from "@/public/data.png";
 
 export default function SeamlessDataFeaturesSection() {
     return (
@@ -36,8 +37,8 @@ export default function SeamlessDataFeaturesSection() {
                     </div>
                     <div className="border-border/50 relative rounded-3xl border p-2.5 lg:col-span-3">
                         <div className="bg-linear-to-b aspect-76/59 relative max-w-[290px] mx-auto sm:max-w-none rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-                            <Image src="/payments.png" className="hidden rounded-[15px] dark:block" alt="data collection illustration dark" width={1207} height={929} />
-                            <Image src="/payments-light.png" className="rounded-[15px] shadow dark:hidden" alt="data collection illustration light" width={1207} height={929} />
+                            <Image src={data} className="hidden rounded-[15px] dark:block" alt="data collection illustration dark" width={1207} height={929} />
+                            <Image src={data} className="rounded-[15px] shadow dark:hidden" alt="data collection illustration light" width={1207} height={929} />
                         </div>
                     </div>
                 </div>
