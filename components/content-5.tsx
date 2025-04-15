@@ -27,38 +27,42 @@ export default function ContentSection() {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Zap className="size-4" />
-              <h3 className="text-sm font-medium">Faaast</h3>
+              <h3 className="text-sm font-medium"> Smart Monitoring</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an entire helping developers and innovate.
+              Continuously track communications across platforms to detect
+              policy violations and compliance risks in real time.
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Cpu className="size-4" />
-              <h3 className="text-sm font-medium">Powerful</h3>
+              <h3 className="text-sm font-medium">Unified Capture</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an entire helping developers and businesses.
+              Seamlessly collect data from email, chat, voice, and video
+              channels into a centralized, compliant archive.
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Lock className="size-4" />
-              <h3 className="text-sm font-medium">Security</h3>
+              <h3 className="text-sm font-medium"> Automated Enforcement</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an helping developers businesses innovate.
+              Use AI-driven rules to enforce retention policies, flag sensitive
+              content, and ensure regulatory alignment.
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Sparkles className="size-4" />
 
-              <h3 className="text-sm font-medium">AI Powered</h3>
+              <h3 className="text-sm font-medium"> Instant Discovery</h3>
             </div>
             <p className="text-muted-foreground text-sm">
-              It supports an helping developers businesses innovate.
+              Quickly search and retrieve relevant communications for audits,
+              investigations, or legal requests with precision{" "}
             </p>
           </div>
         </div>
