@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ContentSection() {
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-8 md:pt-20">
       <div className="mx-auto max-w-5xl space-y-6 px-6 md:space-y-8">
         <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">
           Orbit Insight

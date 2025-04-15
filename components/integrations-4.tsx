@@ -1,10 +1,12 @@
+'use client'
 import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from './'
-import { Logo } from '@/components/logo'
+import { Logo, LogoStroke } from '@/components/logo'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-
+import { useTheme } from 'next-themes';
 export default function IntegrationsSection() {
+    const { theme } = useTheme();
     return (
         <section>
             <div className="bg-muted dark:bg-background py-24 md:py-32">
@@ -26,7 +28,8 @@ export default function IntegrationsSection() {
                                 <IntegrationCard
                                     className="shadow-black-950/10 dark:bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
                                     isCenter={true}>
-                                    <Logo />
+                                    
+                                    { theme === 'dark'? <Logo /> : <LogoStroke/>}
                                 </IntegrationCard>
                             </div>
                         </div>
@@ -47,7 +50,7 @@ export default function IntegrationsSection() {
                         </div>
                     </div>
                     <div className="mx-auto mt-12 max-w-lg space-y-6 text-center">
-                        <h2 className="text-balance text-3xl font-semibold md:text-4xl">Integrate with your favorite tools</h2>
+                        <h2 className="text-balance text-3xl font-semibold md:text-4xl">No code Enterprise integration</h2>
                         <p className="text-muted-foreground">Connect seamlessly with popular platforms and services to enhance your workflow.</p>
 
                         {/* <Button

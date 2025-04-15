@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Logo, LogoStroke } from './logo';
 
 // Define types for our navigation items
 type NavItem = {
@@ -45,7 +44,7 @@ const Footer: React.FC = () => {
       { name: "Early Case Assessment", href: "/product2" },
       { name: "Seamless Data Collections", href: "/data-collections" },
       { name: "Proactive Data Monitoring", href: "/data-monitoring" },
-      // Organizations
+      // Industries
       { name: "Organizations", href: "/organizations" },
       { name: "Law Firms", href: "/law-firms" },
       { name: "Education", href: "/education" },
@@ -120,7 +119,7 @@ const Footer: React.FC = () => {
             
             {/* USE CASES */}
             <div className="mb-4">
-              <div className="text-sm uppercase text-gray-500 dark:text-gray-400 mb-3">USE CASES</div>
+              <div className="text-sm uppercase text-gray-500 dark:text-gray-400 mb-3 font-bold">USE CASES</div>
               {navigation.solutions.slice(0, 3).map((item, index) => (
                 <Link 
                   key={index} 
@@ -133,8 +132,9 @@ const Footer: React.FC = () => {
               ))}
             </div>
             
-            {/* Organizations */}
+            {/* INDUSTRY */}
             <div>
+              <div className="text-sm uppercase text-gray-500 dark:text-gray-400 mb-3 font-bold">INDUSTRY</div>
               {navigation.solutions.slice(3).map((item, index) => (
                 <Link 
                   key={index} 
@@ -178,7 +178,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="mt-16 flex flex-wrap items-end justify-between gap-6 border-t border-gray-200 dark:border-gray-800 py-6">
           <span className="text-gray-500 dark:text-gray-400 order-last block text-center text-sm md:order-first">
-            © {new Date().getFullYear()} Kentron, All rights reserved
+            © 2025 Kentron, All rights reserved
           </span>
           <div className="order-first flex flex-wrap justify-center gap-6 text-sm md:order-last">
             <Link 

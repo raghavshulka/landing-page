@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
-
+import { useTheme } from "next-themes";
 interface MenuItem {
   name: string;
   href?: string;
@@ -40,7 +40,7 @@ const menuItems: MenuItem[] = [
         ]
       },
       {
-        title: "",
+        title: "Industries",
         items: [
             { name: "Organizations", href: "/organization" },
           { name: "Law Firms", href: "/law-firms" },
@@ -62,6 +62,7 @@ const menuItems: MenuItem[] = [
 ];
 
 export const HeroHeader = () => {
+  const { theme } = useTheme();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
@@ -160,10 +161,8 @@ export const HeroHeader = () => {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <Logo className=" dark:visible " />
-                <LogoStroke className="dark:hidden" />
+                { theme === 'dark'? <Logo /> : <LogoStroke/>}
               </Link>
-
               <button
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState == true ? "Close Menu" : "Open Menu"}
