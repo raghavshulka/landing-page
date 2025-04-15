@@ -6,7 +6,7 @@ import Integration from "@/components/integrations-4";
 export default function Home() {
   return (
     <div>
-      <div className="absolute top-4 right-4 z-50">
+      <div className="absolute md:top-4 md:right-4 top-4  right-0 z-50">
         <ThemeToggle />
       </div>
       <HeroSection />
