@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export default function CallToAction() {
+  
     return (
         <section className="py-6 md:py-12">
             <div className="mx-auto max-w-5xl px-6 py-4 md:py-6">
@@ -11,7 +12,7 @@ export default function CallToAction() {
 
                     <div className="mt-6 flex flex-wrap justify-center gap-4">
                         <Button asChild size="lg">
-                            <Link href="/">
+                                <Link href="https://calendly.com/kn-satish/1-1-with-satish?month=2024-11" target="_blank">
                                 <span>Book a Demo</span>
                             </Link>
                         </Button>
