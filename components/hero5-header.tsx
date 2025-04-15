@@ -42,7 +42,7 @@ const menuItems: MenuItem[] = [
       {
         title: "",
         items: [
-            { name: "Organizations", href: "/organizations" },
+            { name: "Organizations", href: "/organization" },
           { name: "Law Firms", href: "/law-firms" },
           { name: "Education", href: "/education" },
         ]
