@@ -32,7 +32,7 @@ const menuItems: MenuItem[] = [
     href: "#",
     sections: [
       {
-        title: "USE CASES",
+        title: "Use cases",
         items: [
           { name: "Early Case Assessment", href: "/product2" },
           { name: "Seamless Data Collections", href: "/data-collections" },
@@ -65,8 +65,11 @@ export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
+  const [hoveredDropdown, setHoveredDropdown] = React.useState<string | null>(null);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
+  const isDesktop = React.useRef(false);
+  const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -76,15 +79,32 @@ export const HeroHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check if we're on desktop
+  React.useEffect(() => {
+    const checkDevice = () => {
+      isDesktop.current = window.innerWidth >= 1024; // lg breakpoint
+    };
+    
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+
   // Add click outside handler to close dropdown
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // Skip if we're on desktop and only using hover
+      if (isDesktop.current) {
+        return;
+      }
+      
       // Skip if the click is on a dropdown toggle button
       if ((event.target as HTMLElement).closest('[data-dropdown-toggle]')) {
         return;
       }
       
-      // Close all dropdowns when clicking outside
+      // Close all dropdowns when clicking outside (mobile only)
       if (
         (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) ||
         (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node))
@@ -100,9 +120,14 @@ export const HeroHeader = () => {
   }, []);
 
   const toggleDropdown = (name: string, event: React.MouseEvent) => {
+    // On desktop, don't do anything - we use hover
+    if (isDesktop.current) {
+      return;
+    }
+    
     // Stop propagation to prevent the document click handler from firing
     event.stopPropagation();
-    // Toggle dropdown
+    // Toggle dropdown on mobile
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
@@ -155,74 +180,112 @@ export const HeroHeader = () => {
                   <li key={index} className="relative">
                     {item.children || item.sections ? (
                       <>
-                        <button
-                          data-dropdown-toggle
-                          onClick={(e) => toggleDropdown(item.name, e)}
-                          className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
+                        <div 
+                          onMouseEnter={() => {
+                            if (!isDesktop.current) return;
+                            // Clear any existing timeout
+                            if (hoverTimeout.current) {
+                              clearTimeout(hoverTimeout.current);
+                              hoverTimeout.current = null;
+                            }
+                            setHoveredDropdown(item.name);
+                          }}
+                          onMouseLeave={() => {
+                            if (!isDesktop.current) return;
+                            // Set a timeout before closing
+                            hoverTimeout.current = setTimeout(() => {
+                              setHoveredDropdown(null);
+                            }, 100);
+                          }}
+                          className="relative"
                         >
-                          <span>{item.name}</span>
-                          <ChevronDown
-                            className={`h-4 w-4 transition-transform ${
-                              openDropdown === item.name ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                        {openDropdown === item.name && (
-                          <div className={cn(
-                            "absolute left-0 mt-2 rounded-md bg-background border border-border shadow-lg focus:outline-none z-30 backdrop-blur-lg",
-                            item.sections ? "w-[480px]" : "w-auto min-w-[180px]"
-                          )}>
-                            {item.sections ? (
-                              <div className="py-2 flex">
-                                {item.sections.map((section, sectionIndex) => (
-                                  <div key={sectionIndex} className={cn(
-                                    "px-3 py-2 flex-1", 
-                                    sectionIndex > 0 && "border-l border-border",
-                                    sectionIndex > 0 && !section.title && "pt-8"
-                                  )}>
-                                    {section.title && (
-                                      <h3 className="text-xs font-medium uppercase text-muted-foreground mb-2 px-1">
-                                        {section.title}
-                                      </h3>
-                                    )}
-                                    <div className="space-y-1">
-                                      {section.items.map((child, childIndex) => (
-                                        <Link
-                                          key={childIndex}
-                                          href={child.href || "#"}
-                                          target={child.target}
-                                          className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/50 block px-3 py-1.5 text-sm rounded-sm"
-                                          onClick={closeDropdowns}
-                                        >
-                                          {child.name}
-                                        </Link>
-                                      ))}
+                          <button
+                            data-dropdown-toggle
+                            onClick={(e) => toggleDropdown(item.name, e)}
+                            className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
+                          >
+                            <span>{item.name}</span>
+                            <ChevronDown
+                              className={`h-4 w-4 transition-transform ${
+                                openDropdown === item.name ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          {(openDropdown === item.name || hoveredDropdown === item.name) && (
+                            <div 
+                              onMouseEnter={() => {
+                                if (!isDesktop.current) return;
+                                // Clear any existing timeout
+                                if (hoverTimeout.current) {
+                                  clearTimeout(hoverTimeout.current);
+                                  hoverTimeout.current = null;
+                                }
+                                setHoveredDropdown(item.name);
+                              }}
+                              onMouseLeave={() => {
+                                if (!isDesktop.current) return;
+                                // Set a timeout before closing
+                                hoverTimeout.current = setTimeout(() => {
+                                  setHoveredDropdown(null);
+                                }, 100);
+                              }}
+                              className={cn(
+                                "absolute left-0 mt-1 rounded-md bg-background border border-border shadow-lg focus:outline-none z-30 backdrop-blur-lg opacity-100 transform scale-100 transition-all duration-200 origin-top-left",
+                                item.sections ? "w-[480px]" : "w-auto min-w-[180px]"
+                              )}
+                            >
+                              {item.sections ? (
+                                <div className="py-2 flex">
+                                  {item.sections.map((section, sectionIndex) => (
+                                    <div key={sectionIndex} className={cn(
+                                      "px-3 py-2 flex-1", 
+                                      sectionIndex > 0 && "border-l border-border",
+                                      sectionIndex > 0 && !section.title && "pt-8"
+                                    )}>
+                                      {section.title && (
+                                        <h3 className="text-xs font-medium uppercase text-muted-foreground mb-2 px-1">
+                                          {section.title}
+                                        </h3>
+                                      )}
+                                      <div className="space-y-1">
+                                        {section.items.map((child, childIndex) => (
+                                          <Link
+                                            key={childIndex}
+                                            href={child.href || "#"}
+                                            target={child.target}
+                                            className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/50 block px-3 py-1.5 text-sm rounded-sm"
+                                            onClick={closeDropdowns}
+                                          >
+                                            {child.name}
+                                          </Link>
+                                        ))}
+                                      </div>
                                     </div>
-                                  </div>
-                                ))}
-                              </div>
-                            ) : item.children ? (
-                              <div className="py-3 px-3">
-                                <div className="space-y-1">
-                                  {item.children.map(
-                                    (child, childIndex) =>
-                                      child.href && (
-                                        <Link
-                                          key={childIndex}
-                                          href={child.href}
-                                          target={child.target}
-                                          className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/50 block px-3 py-1.5 text-sm rounded-sm transition-colors"
-                                          onClick={closeDropdowns}
-                                        >
-                                          {child.name}
-                                        </Link>
-                                      )
-                                  )}
+                                  ))}
                                 </div>
-                              </div>
-                            ) : null}
-                          </div>
-                        )}
+                              ) : item.children ? (
+                                <div className="py-3 px-3">
+                                  <div className="space-y-1">
+                                    {item.children.map(
+                                      (child, childIndex) =>
+                                        child.href && (
+                                          <Link
+                                            key={childIndex}
+                                            href={child.href}
+                                            target={child.target}
+                                            className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/50 block px-3 py-1.5 text-sm rounded-sm transition-colors"
+                                            onClick={closeDropdowns}
+                                          >
+                                            {child.name}
+                                          </Link>
+                                        )
+                                    )}
+                                  </div>
+                                </div>
+                              ) : null}
+                            </div>
+                          )}
+                        </div>
                       </>
                     ) : (
                       item.href && (
