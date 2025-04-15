@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
     resources: [
       { name: "Documentation", href: "https://docs.kentron.ai/introduction", target: "_blank" },
       { name: "Integrations", href: "/integrations" },
-      { name: "Secure by Design", href: "/secure-by-design" },
-      { name: "Regulations", href: "/regulations" },
+      { name: "Secure by Design", href: "/securebydesign" },
+      { name: "Regulations", href: "https://docs.kentron.ai/regulations", target: "_blank" },
     ],
     legal: [
       { name: "Privacy Policy", href: "#" },
