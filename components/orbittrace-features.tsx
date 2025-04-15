@@ -4,8 +4,8 @@ export default function OrbitTraceFeatures() {
     return (
         <section className="overflow-hidden py-8 md:py-16">
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-10">
-                <div className="relative z-10 max-w-2xl">
-                    <h2 className="text-4xl font-semibold lg:text-5xl">Why Orbit Trace?</h2>
+                    <h2 className="text-4xl text-center font-semibold lg:text-5xl pb-4">Why Orbit Trace?</h2>
+                <div className="relative z-10 ">
                     <div className="mt-6">
                         <h3 className="text-2xl font-semibold lg:text-3xl">Built with purpose-driven intelligence</h3>
                         <p className="text-muted-foreground mt-4">
@@ -14,7 +14,7 @@ export default function OrbitTraceFeatures() {
                     </div>
                 </div>
 
-                <div className="relative z-10 max-w-2xl mt-8">
+                <div className="relative z-10 mt-8">
                     <h2 className="text-2xl font-semibold lg:text-3xl">Powerful Data Engine, Purpose-Built for Compliance</h2>
                     <p className="mt-4">Orbit Trace is powered by a robust foundation of three core engines:</p>
                     <ul className="mt-4 space-y-2 list-disc pl-5">
@@ -27,7 +27,7 @@ export default function OrbitTraceFeatures() {
                     </p>
                 </div>
                 
-                <div className="relative z-10 max-w-2xl mt-8">
+                <div className="relative z-10  mt-8">
                     <h2 className="text-2xl font-semibold lg:text-3xl">Effortless Integration. Powerful Intelligence</h2>
                     <p className="mt-4">
                         Seamlessly connect and collect data from all your enterprise applications with zero-code connectors — no complexity, just control.

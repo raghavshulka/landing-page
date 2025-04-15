@@ -5,7 +5,7 @@ export default function OrbitTracePlatform() {
         <section className="py-8 md:py-16">
             <div className="mx-auto max-w-5xl space-y-6 px-6">
                 <div className="relative z-10 grid items-center gap-4 md:gap-6">
-                    <h2 className="text-4xl font-semibold mb-6">Platform Features</h2>
+                    <h2 className="text-4xl text-center font-semibold mb-6">Platform Features</h2>
                 </div>
                 <div className="relative mx-auto grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 lg:grid-cols-3 lg:gap-8">
                     <div className="space-y-2">

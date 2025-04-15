@@ -17,11 +17,11 @@ export default function OrbitTraceContent() {
               Redefining eDiscovery with AI — a platform built to scale with the demands of modern enterprises.
             </p>
             <p className="text-muted-foreground">
-              Orbit Trace is built on the powerful foundation of Kentron Intelligence, designed to meet the evolving needs of forward-thinking enterprises. It delivers advanced eDiscovery and legal hold capabilities to empower legal operations teams. Trusted by corporations, law firms, and legal service providers, Orbit Trace combines robust compliance features with a world-class user experience—delivering efficiency, accuracy, and cost control at scale.
+            Orbit Trace, powered by Kentron Intelligence, is a modern eDiscovery and legal hold solution built for forward-thinking enterprises. It combines advanced compliance features, AI-driven automation, and a user-friendly experience to streamline legal workflows, reduce costs, and scale effortlessly—from small matters to complex investigations.
             </p>
-            <p className="text-muted-foreground mt-6">
+            {/* <p className="text-muted-foreground mt-6">
               Streamline legal workflows from day one— Powered by intelligent, easy-to-use interfaces, advanced analytics, and embedded AI drives every eDiscovery and legal hold process. Whether handling small matters or enterprise-scale investigations, legal ops teams can quickly get up and running with "no-code" connectors, seamless data management, collaborative workspace, and end-to-end control in a secure, scalable environment.
-            </p>
+            </p> */}
 
             {/* <div className="grid grid-cols-2 gap-3 pt-2 sm:gap-4">
               <div className="space-y-3">

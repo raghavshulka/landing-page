@@ -4,12 +4,12 @@ import { ReactNode } from 'react'
 
 export default function OrbitTraceWorkflows() {
     return (
-        <section className="py-8 md:py-16">
+        <section className="py-8 md:py-4">
             <div className="@container mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Harnessing AI for Smarter Legal Workflows</h2>
                 </div>
-                <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 [--color-background:var(--color-muted)] [--color-card:var(--color-muted)] *:text-center md:mt-10 dark:[--color-muted:var(--color-zinc-900)]">
+                <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid  md:grid-cols-2 lg:grid-cols-3 [--color-background:var(--color-muted)] [--color-card:var(--color-muted)] *:text-center md:mt-10 dark:[--color-muted:var(--color-zinc-900)]">
                     <Card className="group border-0 shadow-none">
                         <CardHeader className="pb-2">
                             <CardDecorator>
