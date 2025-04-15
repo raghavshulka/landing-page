@@ -4,19 +4,19 @@ import Image from "next/image";
 export default function OrbitTraceContent() {
   return (
     <section className="py-8 md:py-16">
-      <div className="mx-auto max-w-5xl space-y-6 px-6 md:space-y-8">
-        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">
+      <div className="mx-auto max-w-5xl space-y-6 px-4 sm:px-6 md:space-y-8">
+        <h2 className="relative z-10 max-w-xl text-3xl sm:text-4xl font-medium lg:text-5xl">
           Orbit Trace
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 md:gap-8 lg:gap-10">
-          <div className="relative space-y-4">
-            <p className="text-muted-foreground">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:gap-8 lg:gap-10">
+          <div className="relative space-y-3 sm:space-y-4">
+            <p className="text-muted-foreground text-sm sm:text-base">
               Next-gen eDiscovery is trusted by the world's leading legal innovators.
             </p>
-            <p className="text-md font-semibold">
+            <p className="text-sm sm:text-md font-semibold">
               Redefining eDiscovery with AI — a platform built to scale with the demands of modern enterprises.
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
             Orbit Trace, powered by Kentron Intelligence, is a modern eDiscovery and legal hold solution built for forward-thinking enterprises. It combines advanced compliance features, AI-driven automation, and a user-friendly experience to streamline legal workflows, reduce costs, and scale effortlessly—from small matters to complex investigations.
             </p>
             {/* <p className="text-muted-foreground mt-6">

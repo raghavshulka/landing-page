@@ -69,6 +69,7 @@ export const HeroHeader = () => {
   const [hoveredDropdown, setHoveredDropdown] = React.useState<string | null>(null);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = React.useRef<HTMLDivElement>(null);
   const isDesktop = React.useRef(false);
   const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -84,6 +85,11 @@ export const HeroHeader = () => {
   React.useEffect(() => {
     const checkDevice = () => {
       isDesktop.current = window.innerWidth >= 1024; // lg breakpoint
+      if (isDesktop.current) {
+        // Reset mobile states when switching to desktop
+        setMenuState(false);
+        setOpenDropdown(null);
+      }
     };
     
     checkDevice();
@@ -95,23 +101,26 @@ export const HeroHeader = () => {
   // Add click outside handler to close dropdown
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Skip if we're on desktop and only using hover
+      // Skip if we're on desktop
       if (isDesktop.current) {
         return;
       }
+
+      const target = event.target as HTMLElement;
       
-      // Skip if the click is on a dropdown toggle button
-      if ((event.target as HTMLElement).closest('[data-dropdown-toggle]')) {
+      // Don't close if clicking inside mobile menu content
+      if (mobileMenuRef.current?.contains(target)) {
         return;
       }
-      
-      // Close all dropdowns when clicking outside (mobile only)
-      if (
-        (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) ||
-        (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node))
-      ) {
-        setOpenDropdown(null);
+
+      // Don't close if clicking a dropdown toggle button
+      if (target.closest('[data-dropdown-toggle]')) {
+        return;
       }
+
+      // Close menu and dropdowns when clicking outside
+      setMenuState(false);
+      setOpenDropdown(null);
     };
     
     document.addEventListener('mousedown', handleClickOutside);
@@ -120,25 +129,16 @@ export const HeroHeader = () => {
     };
   }, []);
 
-  const toggleDropdown = (name: string, event: React.MouseEvent) => {
-    // On desktop, don't do anything - we use hover
-    if (isDesktop.current) {
-      return;
-    }
-    
-    // Stop propagation to prevent the document click handler from firing
+  const toggleMobileDropdown = (name: string, event: React.MouseEvent) => {
+    if (isDesktop.current) return;
     event.stopPropagation();
-    // Toggle dropdown on mobile
-    setOpenDropdown(openDropdown === name ? null : name);
+    setOpenDropdown(prev => prev === name ? null : name);
   };
 
-  const closeDropdowns = () => {
-    setOpenDropdown(null);
-  };
-
-  const closeMobileDropdown = () => {
-    setOpenDropdown(null);
+  const handleMobileNavigation = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setMenuState(false);
+    setOpenDropdown(null);
   };
 
   return (
@@ -149,12 +149,12 @@ export const HeroHeader = () => {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto mt-2 max-w-6xl px-4 sm:px-6 transition-all duration-300 lg:px-12",
             isScrolled &&
               "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+          <div className="relative flex flex-wrap items-center justify-between gap-4 sm:gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
@@ -200,7 +200,7 @@ export const HeroHeader = () => {
                         >
                           <button
                             data-dropdown-toggle
-                            onClick={(e) => toggleDropdown(item.name, e)}
+                            onClick={(e) => toggleMobileDropdown(item.name, e)}
                             className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
                           >
                             <span>{item.name}</span>
@@ -230,7 +230,8 @@ export const HeroHeader = () => {
                               }}
                               className={cn(
                                 "absolute left-0 mt-1 rounded-md bg-background border border-border shadow-lg focus:outline-none z-30 backdrop-blur-lg opacity-100 transform scale-100 transition-all duration-200 origin-top-left",
-                                item.sections ? "w-[480px]" : "w-auto min-w-[180px]"
+                                item.sections ? "w-[480px]" : "w-auto min-w-[180px]",
+                                !isDesktop.current && "fixed top-auto left-4 right-4 w-[calc(100%-2rem)]"
                               )}
                             >
                               {item.sections ? (
@@ -253,7 +254,7 @@ export const HeroHeader = () => {
                                             href={child.href || "#"}
                                             target={child.target}
                                             className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/50 block px-3 py-1.5 text-sm rounded-sm"
-                                            onClick={closeDropdowns}
+                                            onClick={handleMobileNavigation}
                                           >
                                             {child.name}
                                           </Link>
@@ -273,7 +274,7 @@ export const HeroHeader = () => {
                                             href={child.href}
                                             target={child.target}
                                             className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/50 block px-3 py-1.5 text-sm rounded-sm transition-colors"
-                                            onClick={closeDropdowns}
+                                            onClick={handleMobileNavigation}
                                           >
                                             {child.name}
                                           </Link>
@@ -292,6 +293,7 @@ export const HeroHeader = () => {
                           target={item.target}
                           href={item.href}
                           className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                          onClick={handleMobileNavigation}
                         >
                           <span>{item.name}</span>
                         </Link>
@@ -302,7 +304,8 @@ export const HeroHeader = () => {
               </ul>
             </div>
 
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent"
+              ref={mobileMenuRef}>
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
                   {menuItems.map((item, index) => (
@@ -311,7 +314,7 @@ export const HeroHeader = () => {
                         <div className="space-y-2">
                           <button
                             data-dropdown-toggle
-                            onClick={(e) => toggleDropdown(item.name, e)}
+                            onClick={(e) => toggleMobileDropdown(item.name, e)}
                             className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
                           >
                             <span>{item.name}</span>
@@ -322,7 +325,7 @@ export const HeroHeader = () => {
                             />
                           </button>
                           {openDropdown === item.name && (
-                            <div>
+                            <div ref={mobileDropdownRef}>
                               {item.sections ? (
                                 <div className="pl-4 mt-2 grid grid-cols-2 gap-4">
                                   {item.sections.map((section, sectionIndex) => (
@@ -337,7 +340,7 @@ export const HeroHeader = () => {
                                               href={child.href || "#"}
                                               target={child.target}
                                               className="text-muted-foreground hover:text-accent-foreground block py-1 text-sm"
-                                              onClick={closeMobileDropdown}
+                                              onClick={handleMobileNavigation}
                                             >
                                               {child.name}
                                             </Link>
@@ -357,7 +360,7 @@ export const HeroHeader = () => {
                                             href={child.href}
                                             target={child.target}
                                             className="text-muted-foreground hover:text-accent-foreground block py-1.5 text-sm"
-                                            onClick={closeMobileDropdown}
+                                            onClick={handleMobileNavigation}
                                           >
                                             {child.name}
                                           </Link>
@@ -376,7 +379,7 @@ export const HeroHeader = () => {
                             target={item.target}
                             href={item.href}
                             className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                            onClick={() => setMenuState(false)}
+                            onClick={handleMobileNavigation}
                           >
                             <span>{item.name}</span>
                           </Link>

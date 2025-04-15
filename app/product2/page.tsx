@@ -6,7 +6,7 @@ import Features3 from '@/components/features-3'
 
 const page = () => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 pt-8 md:pt-0">
         <Features5 />
         <Content71 />
         {/* <Features3 /> */}

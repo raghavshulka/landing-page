@@ -8,7 +8,7 @@ import Footer from '@/components/footer'
 import CallToAction from '@/components/call-to-action'
 const page = () => {
   return (
-    <div>
+    <div className='pt-8 md:pt-0'>
       {/* Orbit Insight Introduction */}
       <Content7 />
       {/* Why Orbit Insight, Processing Engines & Integration */}

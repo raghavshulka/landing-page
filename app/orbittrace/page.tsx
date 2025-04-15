@@ -7,7 +7,7 @@ import CallToAction from '@/components/call-to-action'
 
 const page = () => {
   return (
-    <div>
+    <div className='pt-8 md:pt-0'>
       {/* Orbit Trace Introduction */}
       <OrbitTraceContent />
       {/* Why Orbit Trace, Processing Engines & Integration */}
