@@ -24,7 +24,7 @@ const menuItems: MenuItem[] = [
     href: "#",
     children: [
       { name: "Orbit Insight", href: "/product" },
-      { name: "Orbit Trace", href: "/orbit-trace" },
+      { name: "Orbit Trace", href: "/orbittrace" },
     ],
   },
   {
