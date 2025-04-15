@@ -1,5 +1,7 @@
 import { Search, Shield, Clock, Bell, FileSearch } from 'lucide-react'
 import Image from 'next/image'
+import image from "@/public/image.png";
+import darkimage from "@/public/darkimage.png";
 
 export default function ProactiveDataFeaturesSection() {
     return (
@@ -36,8 +38,8 @@ export default function ProactiveDataFeaturesSection() {
                     </div>
                     <div className="border-border/50 relative rounded-3xl border p-2.5 lg:col-span-3">
                         <div className="bg-linear-to-b aspect-76/59 relative max-w-[290px] mx-auto sm:max-w-none rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-                            <Image src="/payments.png" className="hidden rounded-[15px] dark:block" alt="data monitoring illustration dark" width={1207} height={929} />
-                            <Image src="/payments-light.png" className="rounded-[15px] shadow dark:hidden" alt="data monitoring illustration light" width={1207} height={929} />
+                            <Image src={image} className="rounded-[15px] shadow dark:hidden" alt="data monitoring illustration light" width={1207} height={929} />
+                            <Image src={darkimage} className="hidden rounded-[15px] dark:block" alt="data monitoring illustration dark" width={1207} height={929} />
                         </div>
                     </div>
                 </div>
