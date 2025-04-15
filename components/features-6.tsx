@@ -19,45 +19,45 @@ export default function FeaturesSection() {
                 <div className="relative mx-auto grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 lg:grid-cols-3 lg:gap-6">
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                            <Search className="size-4" />
-                            <h3 className="text-sm font-medium">AI-Powered Search</h3>
+                            <Shield className="size-4" />
+                            <h3 className="text-sm font-medium">Advanced Data Protection</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Accelerate review and automatically classify documents as responsive, non-responsive, privileged, or confidential. Surface key information faster with natural language and keyword search.</p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                            <Tags className="size-4" />
-                            <h3 className="text-sm font-medium">Automated Tagging & Smart Filters</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">Automatically tag documents and apply intelligent filters to organize and prioritize review tasks.</p>
+                        <p className="text-muted-foreground text-sm">Confident collaboration with audit logs and access controls.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Lock className="size-4" />
-                            <h3 className="text-sm font-medium">Custom LLM Workflows</h3>
+                            <h3 className="text-sm font-medium">AI-Driven Privilege Detection</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Enable retrieval-augmented generation (RAG) to extract insights without exposing sensitive data. Benefit from redaction-aware LLM queries, ensuring compliance while unlocking powerful, data-driven results.</p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                            <Users className="size-4" />
-                            <h3 className="text-sm font-medium">Collaboration & Governance</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">Ensure strict control over document access with user-based permissions and secure, private collaboration spaces for internal teams and external counsel.</p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                            <Shield className="size-4" />
-                            <h3 className="text-sm font-medium">Data Privacy & Security</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">Sensitive data detection (PII/PHI/IP), Redaction without decryption, Role-based access control for LLM outputs, Privacy Vault for anonymized data storage.</p>
+                        <p className="text-muted-foreground text-sm">Automated privilege analysis using machine learning.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <ChartBar className="size-4" />
-                            <h3 className="text-sm font-medium">Insights & Case Strategy</h3>
+                            <h3 className="text-sm font-medium">Insightful Intelligence</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Risk assessment & trend detection via Cognitive Engine. Document clustering & visualization. Predictive tagging and prioritization.</p>
+                        <p className="text-muted-foreground text-sm">Actionable insights powered by advanced analytics.</p>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                            <Search className="size-4" />
+                            <h3 className="text-sm font-medium">Intelligence Search</h3>
+                        </div>
+                        <p className="text-muted-foreground text-sm">Seamlessly integrate text, voice, and video data with intuitive AI processing.</p>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                            <Tags className="size-4" />
+                            <h3 className="text-sm font-medium">Precision Classification</h3>
+                        </div>
+                        <p className="text-muted-foreground text-sm">Share case data with law firms or internal stakeholders securely—no external tools required.</p>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                            <FileSearch className="size-4" />
+                            <h3 className="text-sm font-medium">Smart Export</h3>
+                        </div>
+                        <p className="text-muted-foreground text-sm">Export data with precision and compliance, tailored to your needs.</p>
                     </div>
                 </div>
                 <div className="relative text-center mt-2">

@@ -35,15 +35,15 @@ const menuItems: MenuItem[] = [
         title: "Use cases",
         items: [
           { name: "Early Case Assessment", href: "/product2" },
-          { name: "Seamless Data Collections", href: "/data-collections" },
-          { name: "Proactive Data Monitoring", href: "/data-monitoring" },
+          { name: "Seamless Data Collections", href: "/seamlessdata" },
+          { name: "Proactive Data Monitoring", href: "/proactivedata" },
         ]
       },
       {
-        title: "Industries",
+        title: "Industriesr",
         items: [
             { name: "Organizations", href: "/organization" },
-          { name: "Law Firms", href: "/law-firms" },
+          { name: "Law Firms", href: "/lawfirms" },
           { name: "Education", href: "/education" },
         ]
       }
@@ -54,9 +54,9 @@ const menuItems: MenuItem[] = [
     href: "#",
     children: [
       { name: "Documentation", href: "https://docs.kentron.ai/introduction", target: "_blank" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "Secure by Design", href: "/secure-by-design" },
-      { name: "Regulations", href: "/regulations" },
+      { name: "Integrations", href: "/integrations", }, 
+      { name: "Secure by Design", href: "/securebydesign",  },
+      { name: "Regulations", href: "https://docs.kentron.ai/regulations", target: "_blank" },
     ],
   },
 ];
