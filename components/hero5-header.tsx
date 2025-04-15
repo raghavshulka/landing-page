@@ -65,6 +65,8 @@ export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
+  const dropdownRef = React.useRef<HTMLDivElement>(null);
+  const mobileMenuRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -74,12 +76,43 @@ export const HeroHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleDropdown = (name: string) => {
+  // Add click outside handler to close dropdown
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Skip if the click is on a dropdown toggle button
+      if ((event.target as HTMLElement).closest('[data-dropdown-toggle]')) {
+        return;
+      }
+      
+      // Close all dropdowns when clicking outside
+      if (
+        (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) ||
+        (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node))
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const toggleDropdown = (name: string, event: React.MouseEvent) => {
+    // Stop propagation to prevent the document click handler from firing
+    event.stopPropagation();
+    // Toggle dropdown
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
   const closeDropdowns = () => {
     setOpenDropdown(null);
+  };
+
+  const closeMobileDropdown = () => {
+    setOpenDropdown(null);
+    setMenuState(false);
   };
 
   return (
@@ -116,14 +149,15 @@ export const HeroHeader = () => {
               </button>
             </div>
 
-            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+            <div className="absolute inset-0 m-auto hidden size-fit lg:block" ref={dropdownRef}>
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item, index) => (
                   <li key={index} className="relative">
                     {item.children || item.sections ? (
                       <>
                         <button
-                          onClick={() => toggleDropdown(item.name)}
+                          data-dropdown-toggle
+                          onClick={(e) => toggleDropdown(item.name, e)}
                           className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
                         >
                           <span>{item.name}</span>
@@ -141,10 +175,16 @@ export const HeroHeader = () => {
                             {item.sections ? (
                               <div className="py-2 flex">
                                 {item.sections.map((section, sectionIndex) => (
-                                  <div key={sectionIndex} className={cn("px-3 py-2 flex-1", sectionIndex > 0 && "border-l border-border")}>
-                                    <h3 className="text-xs font-medium uppercase text-muted-foreground mb-2 px-1">
-                                      {section.title}
-                                    </h3>
+                                  <div key={sectionIndex} className={cn(
+                                    "px-3 py-2 flex-1", 
+                                    sectionIndex > 0 && "border-l border-border",
+                                    sectionIndex > 0 && !section.title && "pt-8"
+                                  )}>
+                                    {section.title && (
+                                      <h3 className="text-xs font-medium uppercase text-muted-foreground mb-2 px-1">
+                                        {section.title}
+                                      </h3>
+                                    )}
                                     <div className="space-y-1">
                                       {section.items.map((child, childIndex) => (
                                         <Link
@@ -208,7 +248,8 @@ export const HeroHeader = () => {
                       {item.children || item.sections ? (
                         <div className="space-y-2">
                           <button
-                            onClick={() => toggleDropdown(item.name)}
+                            data-dropdown-toggle
+                            onClick={(e) => toggleDropdown(item.name, e)}
                             className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
                           >
                             <span>{item.name}</span>
@@ -234,10 +275,7 @@ export const HeroHeader = () => {
                                               href={child.href || "#"}
                                               target={child.target}
                                               className="text-muted-foreground hover:text-accent-foreground block py-1 text-sm"
-                                              onClick={() => {
-                                                closeDropdowns();
-                                                setMenuState(false);
-                                              }}
+                                              onClick={closeMobileDropdown}
                                             >
                                               {child.name}
                                             </Link>
@@ -257,10 +295,7 @@ export const HeroHeader = () => {
                                             href={child.href}
                                             target={child.target}
                                             className="text-muted-foreground hover:text-accent-foreground block py-1.5 text-sm"
-                                            onClick={() => {
-                                              closeDropdowns();
-                                              setMenuState(false);
-                                            }}
+                                            onClick={closeMobileDropdown}
                                           >
                                             {child.name}
                                           </Link>

@@ -11,6 +11,12 @@ type NavItem = {
   target?: string;
 };
 
+type NavigationItem = {
+  name: string;
+  href: string;
+  target?: string;
+};
+
 type LinkGroup = {
   group: string;
   items: NavItem[];
@@ -19,24 +25,36 @@ type LinkGroup = {
 const Footer: React.FC = () => {
   const pathname = usePathname();
 
-  // Navigation data
-  const navigation = {
+  // Navigation data based on header menu items
+  const navigation: {
+    main: NavigationItem[];
+    product: NavigationItem[];
+    solutions: NavigationItem[];
+    resources: NavigationItem[];
+    legal: NavigationItem[];
+  } = {
     main: [
       { name: 'Home', href: '/' },
-      { name: 'Orbit Insight', href: '/product' },
-      { name: 'ECA', href: '/product2' },
-      { name: 'Documentation', target: '_blank', href: 'https://docs.kentron.ai/introduction' },
     ],
     product: [
-      { name: "Unified Ingestion Engine", href: "/product/unified-ingestion" },
-      { name: "Intelligent Retrieval Engine", href: "/product/intelligence-processing" },
-      { name: "Predictive Compliance Engine", href: "/product/predictive-compliance" },
+      { name: "Orbit Insight", href: "/product" },
+      { name: "Orbit Trace", href: "/orbit-trace" },
     ],
-    solution: [
-      { name: "Corporations", href: "#" },
-      { name: "Legal Service Provider", href: "#" },
-      { name: "Law Firms", href: "#" },
-      { name: "Financial Services", href: "#" },
+    solutions: [
+      // Use Cases
+      { name: "Early Case Assessment", href: "/product2" },
+      { name: "Seamless Data Collections", href: "/data-collections" },
+      { name: "Proactive Data Monitoring", href: "/data-monitoring" },
+      // Organizations
+      { name: "Organizations", href: "/organizations" },
+      { name: "Law Firms", href: "/law-firms" },
+      { name: "Education", href: "/education" },
+    ],
+    resources: [
+      { name: "Documentation", href: "https://docs.kentron.ai/introduction", target: "_blank" },
+      { name: "Integrations", href: "/integrations" },
+      { name: "Secure by Design", href: "/secure-by-design" },
+      { name: "Regulations", href: "/regulations" },
     ],
     legal: [
       { name: "Privacy Policy", href: "#" },
@@ -46,38 +64,50 @@ const Footer: React.FC = () => {
 
   // Convert navigation to the format needed for the original UI
   const links: LinkGroup[] = [
-    // {
-    //   group: 'Navigation',
-    //   items: navigation.main.map(item => ({ 
-    //     title: item.name, 
-    //     href: item.href, 
-    //     ...(item.target && { target: item.target }) 
-    //   })),
-    // },
     {
       group: 'Products',
-      items: navigation.product.map(item => ({ title: item.name, href: item.href })),
+      items: navigation.product.map(item => ({ 
+        title: item.name, 
+        href: item.href,
+        ...(item.target && { target: item.target })
+      })),
     },
     {
       group: 'Solutions',
-      items: navigation.solution.map(item => ({ title: item.name, href: item.href })),
+      items: navigation.solutions.map(item => ({ 
+        title: item.name, 
+        href: item.href,
+        ...(item.target && { target: item.target })
+      })),
+    },
+    {
+      group: 'Resources',
+      items: navigation.resources.map(item => ({ 
+        title: item.name, 
+        href: item.href,
+        ...(item.target && { target: item.target })
+      })),
     },
     {
       group: 'Legal',
-      items: navigation.legal.map(item => ({ title: item.name, href: item.href })),
+      items: navigation.legal.map(item => ({ 
+        title: item.name, 
+        href: item.href 
+      })),
     },
   ];
 
   return (
     <footer className="border-t border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-gray-900 dark:text-white pt-16 ">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="grid gap-16 md:grid-cols-3">
+        <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-6">
             <div className="block font-medium text-lg mb-4">Products</div>
             {navigation.product.map((item, index) => (
               <Link 
                 key={index} 
                 href={item.href}
+                target={item.target}
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mb-3 duration-150"
               >
                 <span>{item.name}</span>
@@ -87,10 +117,44 @@ const Footer: React.FC = () => {
           
           <div className="space-y-6">
             <div className="block font-medium text-lg mb-4">Solutions</div>
-            {navigation.solution.map((item, index) => (
+            
+            {/* USE CASES */}
+            <div className="mb-4">
+              <div className="text-sm uppercase text-gray-500 dark:text-gray-400 mb-3">USE CASES</div>
+              {navigation.solutions.slice(0, 3).map((item, index) => (
+                <Link 
+                  key={index} 
+                  href={item.href}
+                  target={item.target}
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mb-3 duration-150"
+                >
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </div>
+            
+            {/* Organizations */}
+            <div>
+              {navigation.solutions.slice(3).map((item, index) => (
+                <Link 
+                  key={index} 
+                  href={item.href}
+                  target={item.target}
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mb-3 duration-150"
+                >
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="block font-medium text-lg mb-4">Resources</div>
+            {navigation.resources.map((item, index) => (
               <Link 
                 key={index} 
                 href={item.href}
+                target={item.target}
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mb-3 duration-150"
               >
                 <span>{item.name}</span>
@@ -104,6 +168,7 @@ const Footer: React.FC = () => {
               <Link 
                 key={index} 
                 href={item.href}
+                target={item.target}
                 className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mb-3 duration-150"
               >
                 <span>{item.name}</span>
